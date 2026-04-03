@@ -179,11 +179,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
     return Positioned(
       bottom: 0, left: 0, right: 0,
       child: GlassmorphicContainer(
-        width: double.infinity, height: 110, borderRadius: 1, blur: 20, border: 1, alignment: Alignment.center,
+        width: double.infinity, height: 110 + MediaQuery.of(context).padding.bottom, borderRadius: 1, blur: 20, border: 1, alignment: Alignment.center,
         linearGradient: LinearGradient(colors: [AppTheme.primaryColor.withOpacity(0.8), AppTheme.primaryColor]),
         borderGradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Colors.transparent]),
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.fromLTRB(24, 24, 24, 24 + MediaQuery.of(context).padding.bottom),
           child: GestureDetector(
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
