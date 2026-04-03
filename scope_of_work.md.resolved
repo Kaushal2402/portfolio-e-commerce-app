@@ -1,0 +1,69 @@
+# SmartCommerce: Production-Ready AI E-commerce App
+
+## Project Overview
+**SmartCommerce** is a next-generation mobile shopping experience that uses AI to personalize the user interface and product suggestions. Designed for luxury brands or high-end retail, it prioritizes premium aesthetics, smooth micro-animations, and AI-driven interactions.
+
+## 📱 Detailed Screen List
+1. **Premium Splash Screen**: Luxury branding with pulsing micro-animations.
+2. **AI-Onboarding Flow**: Personality assessment for better product matching.
+3. **Smart Home Dashboard**: Personalized "For You" feed, Trending AI-picks, and Glassmorphic dynamic categories.
+4. **Intelligent Search (Voice-First)**: Full-screen voice interaction and neural search results.
+5. **Smart Product Catalog**: Ultra-fast masonry grid with smart filters (color, size, material).
+6. **AI Product Detail Screen**: 
+   - Interactive 360 viewer.
+   - **AR Preview Button**: Real-world scale product visualization.
+   - AI "Complete the Look" suggestions.
+7. **Glassmorphic Cart & Wishlist**: Side-swipe cards and quick-add logic.
+8. **Express AI Checkout**: 
+   - Smart payment suggestions based on user preference.
+   - Dynamic address validation (Google Maps API).
+9. **Real-time Order Tracking**: Animated maps and status timelines.
+10. **AI Concierge (Support Chat)**: Smart bot for order queries and styling advice.
+11. **User Persona / Profile**: History-based trend analysis and loyalty points.
+
+## 🔥 Advanced Feature List
+- **AI Recommendation Engine**: "Understands" color preferences and budget trends using local/remote ML.
+- **Conversational Voice Search**: Natural language processing to parse complex queries.
+- **AR Product Interaction**: True-to-life AR visualization (Augmented Reality).
+- **Dynamic Glassmorphic Theming**: Switch between "Midnight Lux" and "Arctic Light" themes.
+- **Seamless Micro-Animations**: Advanced use of `flutter_animate` and `Lottie` for button feedbacks.
+- **Smart Push Notifications**: Personalized alerts for price drops on wishlisted items.
+- **Biometric Security**: FaceID/Fingerprint for high-speed checkout.
+- **Social AR Sharing**: Share AR previews directly to social stories.
+- **Multi-currency & Localized Support**: Automatic currency conversion based on IP/Region.
+- **Offline Mode**: Local caching of catalog using Isar/Hive.
+
+## Technical Architecture
+- **Framework**: Flutter (Channel Stable)
+- **State Management**: flutter_bloc (BLoC + HydratedBLoC for persistence)
+- **Networking**: Dio (for API integration)
+- **Database**: Hive/Isar for local storage (caching)
+- **Theming**: Custom design system with dynamic light/dark mode support.
+- **Dependency Injection**: get_it / injectable
+
+## Production Readiness
+- **Clean Architecture**: Domain, Data, and Presentation layers separation.
+- **Testing**: Unit tests for BLoC logic, Widget tests for core UI screens.
+- **Performance**: Optimized asset loading, SVG integration, and lazy loading lists.
+- **SEO/Metadata**: Integrated deep links for product sharing.
+
+## ⏳ Pending Technical Scope (Phase 2)
+The following items are defined in the architecture but are currently **simulated** or **mocked** in the high-fidelity UI. These are required for the final production launch:
+
+1.  **Hardware Integration (True AR & Biometrics)**: 
+    *   Transition from AR simulation to real-world `ARCore`/`ARKit` engine visualization.
+    *   Implement real `local_auth` calls for FaceID/Fingerprint authentication.
+2.  **Backend & Data Layer (Live Integration)**:
+    *   Replace hardcoded static entities with real-time `Dio` API streams from a live server.
+    *   Activate `HydratedBLoC` and `Hive/Isar` persistence for full offline catalog support.
+3.  **Aesthetic Depth (Arctic Light Theme)**:
+    *   Implement the full light-mode counterpart for the "Midnight Lux" design system across all 20+ screens.
+4.  **Localization & Global Reach**:
+    *   Automated multi-currency conversion based on IP/Region.
+5.  **Quality Assurance & Testing**:
+    *   Development of a comprehensive Unit and Widget test suite for 100% path coverage.
+
+## Success Metrics
+- Performance: 60fps animations.
+- Accuracy: Voice search hit rate >90%.
+- Accessibility: WCAG compliant contrast ratios and labels.
