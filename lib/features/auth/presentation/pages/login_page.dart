@@ -32,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryColor,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           // Background Glows
@@ -44,36 +45,44 @@ class _LoginPageState extends State<LoginPage> {
           ),
           
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 40),
-                  Text("SECURE ACCESS", style: GoogleFonts.outfit(color: AppTheme.accentColor, fontSize: 12, fontWeight: FontWeight.bold, letterSpacing: 4))
-                      .animate().fadeIn().slideX(begin: -0.2, end: 0),
-                  const SizedBox(height: 12),
-                  Text("HELLO AGAIN,", style: GoogleFonts.outfit(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold, letterSpacing: 1))
-                      .animate().fadeIn(delay: 200.ms).slideX(begin: -0.2, end: 0),
-                  Text("STYLE EXPLORER", style: GoogleFonts.outfit(color: Colors.white38, fontSize: 18, fontWeight: FontWeight.w300))
-                      .animate().fadeIn(delay: 400.ms).slideX(begin: -0.2, end: 0),
-                  
-                  const Spacer(),
-                  
-                  // Animated Input Area
-                  _buildAnimatedInputArea(),
-                  
-                  const SizedBox(height: 32),
-                  
-                  _buildActionButton(),
-                  
-                  const Spacer(flex: 2),
-                  
-                  Center(
-                    child: Text("By continuing, you agree to our AI Privacy Protocol.", style: GoogleFonts.outfit(color: Colors.white12, fontSize: 10))
-                        .animate().fadeIn(delay: 1000.ms),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom),
+                child: IntrinsicHeight(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 40),
+                      Text("SECURE ACCESS", style: GoogleFonts.outfit(color: AppTheme.accentColor, fontSize: 12, fontWeight: FontWeight.bold, letterSpacing: 4))
+                          .animate().fadeIn().slideX(begin: -0.2, end: 0),
+                      const SizedBox(height: 12),
+                      Text("HELLO AGAIN,", style: GoogleFonts.outfit(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold, letterSpacing: 1))
+                          .animate().fadeIn(delay: 200.ms).slideX(begin: -0.2, end: 0),
+                      Text("STYLE EXPLORER", style: GoogleFonts.outfit(color: Colors.white38, fontSize: 18, fontWeight: FontWeight.w300))
+                          .animate().fadeIn(delay: 400.ms).slideX(begin: -0.2, end: 0),
+                      
+                      const Spacer(),
+                      
+                      // Animated Input Area
+                      _buildAnimatedInputArea(),
+                      
+                      const SizedBox(height: 32),
+                      
+                      _buildActionButton(),
+                      
+                      const Spacer(flex: 2),
+                      
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 24),
+                          child: Text("By continuing, you agree to our AI Privacy Protocol.", style: GoogleFonts.outfit(color: Colors.white12, fontSize: 10))
+                              .animate().fadeIn(delay: 1000.ms),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),

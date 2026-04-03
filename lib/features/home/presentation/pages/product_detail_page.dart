@@ -206,11 +206,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     return Positioned(
       bottom: 0, left: 0, right: 0,
       child: GlassmorphicContainer(
-        width: double.infinity, height: 160, borderRadius: 1, blur: 20, border: 1, alignment: Alignment.center,
+        width: double.infinity, height: 160 + MediaQuery.of(context).padding.bottom, borderRadius: 1, blur: 20, border: 1, alignment: Alignment.center,
         linearGradient: LinearGradient(colors: [AppTheme.primaryColor.withOpacity(0.8), AppTheme.primaryColor]),
         borderGradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Colors.transparent]),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          padding: EdgeInsets.fromLTRB(24, 12, 24, 12 + MediaQuery.of(context).padding.bottom),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

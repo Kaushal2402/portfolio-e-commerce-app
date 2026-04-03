@@ -42,11 +42,11 @@ class _ExpressCheckoutOverlayState extends State<ExpressCheckoutOverlay> {
   @override
   Widget build(BuildContext context) {
     return GlassmorphicContainer(
-      width: double.infinity, height: 400, borderRadius: 32, blur: 20, border: 1, alignment: Alignment.center,
+      width: double.infinity, height: 400 + MediaQuery.of(context).padding.bottom, borderRadius: 32, blur: 20, border: 1, alignment: Alignment.center,
       linearGradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.black.withOpacity(0.9), Colors.black]),
       borderGradient: LinearGradient(colors: [AppTheme.accentColor.withOpacity(0.5), Colors.transparent]),
       child: Padding(
-        padding: const EdgeInsets.all(32),
+        padding: EdgeInsets.fromLTRB(32, 32, 32, 32 + MediaQuery.of(context).padding.bottom),
         child: Column(
           children: [
             Text("EXPRESS 1-TAP CHECKOUT", style: GoogleFonts.outfit(color: AppTheme.accentColor, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 3)),

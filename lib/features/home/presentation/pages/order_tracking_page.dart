@@ -163,7 +163,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
           borderGradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Colors.transparent]),
           child: ListView(
             controller: scrollController,
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.fromLTRB(24, 24, 24, 24 + MediaQuery.of(context).padding.bottom),
             children: [
               Center(child: Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.white12, borderRadius: BorderRadius.circular(2)))),
               const SizedBox(height: 24),

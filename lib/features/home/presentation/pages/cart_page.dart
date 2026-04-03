@@ -264,7 +264,7 @@ class _CartPageState extends State<CartPage> {
     if (_cartItems.isEmpty) return const SizedBox();
     
     return Positioned(
-      bottom: 24, left: 24, right: 24,
+      bottom: MediaQuery.of(context).padding.bottom + 24, left: 24, right: 24,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         height: _showDetails ? 480 : 240,

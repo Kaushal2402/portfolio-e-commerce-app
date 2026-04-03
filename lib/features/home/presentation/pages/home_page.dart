@@ -642,7 +642,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildBottomNavBar() {
     return Positioned(
-      bottom: 24, left: 24, right: 24,
+      bottom: MediaQuery.of(context).padding.bottom + 24, left: 24, right: 24,
       child: GlassmorphicContainer(
         width: double.infinity, height: 70, borderRadius: 24, blur: 20, border: 1, alignment: Alignment.center,
         linearGradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0.05)]),

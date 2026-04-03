@@ -131,7 +131,7 @@ class _AIConciergePageState extends State<AIConciergePage> {
 
   Widget _buildInputArea() {
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.fromLTRB(24, 24, 24, 24 + MediaQuery.of(context).padding.bottom),
       child: GlassmorphicContainer(
         width: double.infinity, height: 60, borderRadius: 20, blur: 20, border: 1, alignment: Alignment.center,
         linearGradient: LinearGradient(colors: [Colors.white.withOpacity(0.05), Colors.white.withOpacity(0.02)]),
